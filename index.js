@@ -66,7 +66,8 @@ function soma (num1, num2){
         if(typeof num1 != "number"  || typeof num2 != "number"){
             return("Não são números")
         }
-        await fs.appendFile("resultado.txt", `A soma ${num1} + ${num2} é igual a ${num1 + num2}`);
+        let soma = num1 + num2;
+        await fs.appendFile("resultado.txt", `A soma de ${num1} + ${num2} é igual a ${soma}\n`);
     }      
     )
 }
