@@ -64,7 +64,7 @@ const fs = require("fs/promises")
 function soma (num1, num2){
     return new Promise(async (reject, resolve) => {
         if(typeof num1 != "number"  || typeof num2 != "number"){
-            return("Não são números")
+            return reject(console.log("Não são números"))
         }
         let soma = num1 + num2;
         await fs.appendFile("resultado.txt", `A soma de ${num1} + ${num2} é igual a ${soma}\n`);
@@ -73,3 +73,4 @@ function soma (num1, num2){
 }
 
 soma(10, 20);
+soma("int", 20)
